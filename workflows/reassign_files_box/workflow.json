@@ -1,0 +1,20 @@
+{
+  "name": "reassign_files_box",
+  "title": "Reassign Files while Deprovisioning with Box",
+  "description": "The purpose of this Workflow pack is to automatically transfer a target user’s Box files and folders to that target user’s manager as part of the off-boarding process. This workflow is triggered by a user being removed from a specified Okta group.",
+  "connectors": [
+    "okta",
+    "box",
+    "office365mail"
+  ],
+  "links": [
+    {
+      "title": "Video Walk-through",
+      "destination": "https://www.youtube.com/watch?v=8XTgJnSP4DU"
+    },
+    {
+      "title": "Setup Documentation",
+      "destination": "https://github.com/okta/workflows-templates/blob/master/workflows/reassign_files_box/readme.md"
+    }
+  ]
+}
