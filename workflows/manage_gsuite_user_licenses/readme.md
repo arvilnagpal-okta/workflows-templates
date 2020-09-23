@@ -3,36 +3,34 @@
 
 ## **<span style="text-decoration:underline;">Overview</span>**
 
-File download:[ GSuiteUsersFlow.flowpack](https://drive.google.com/file/d/1RJ6ZACumNIXhzKeV23Ri2Op6SMpJIthP/view?usp=sharing)
-
 This page outlines a sample workflow pack that contains two workflows:
 
 
-    An G Suite User Deactivation Flow: In this flow, once a user is removed from a specified Okta group:
+    1. 	An G Suite User Deactivation Flow: In this flow, once a user is removed from a specified Okta group:
 
 
-        ·  The user’s G Suite account will be disabled immediately.
+        1. 	The userís G Suite account will be disabled immediately.
 
 
-        ·  An email to the users manager to that effect will be sent.
+        2. 	An email to the users manager to that effect will be sent.
 
 
-        ·  After a specified delay, the user’s G Suite license will be removed.
+        3. 	After a specified delay, the userís G Suite license will be removed.
 
 
-        ·  An email to the users manager to that effect will be sent.
+        4. 	An email to the users manager to that effect will be sent.
 
 
-    An G Suite User Activation Flow: Once a user is added to a specified Okta group:
+    2. 	An G Suite User Activation Flow: Once a user is added to a specified Okta group:
 
 
-        ·  The user’s G Suite account will be enabled immediately.
+        1. 	The userís G Suite account will be enabled immediately.
 
 
-        ·  The user’s previously assigned G Suite licenses will be reassigned immediately.
+        2. 	The userís previously assigned G Suite licenses will be reassigned immediately.
 
 
-        ·  An email to the users manager to that effect will be sent.
+        3. 	An email to the users manager to that effect will be sent.
 
 
 ## **<span style="text-decoration:underline;">Before you get Started / Prerequisites</span>**
@@ -49,7 +47,7 @@ Once in Billing you will need to do two things:
     1. 	Add an additional license. I chose the Android Management license as it is zero cost / free.
 
 
-    2. 	ONLY after you have added the additional license will you see the setting to auto assign licenses so that you can turn it off for everyone.
+    2. 	ONLY after you have added the additional license will you see the setting to auto assign licenses so that you can turn it off for everyone. 
 
 Along with the connectors specified above you will need:
 
@@ -62,19 +60,23 @@ Along with the connectors specified above you will need:
     2. 	An Okta User that will be added and removed from the above Okta group as part of the demo.
 
 
-        ·  A valid Okta user (username) should be populated in the manager field for this user to represent the user assigned as the manager to this user.
+        1. 	A valid Okta user (username) should be populated in the manager field for this user to represent the user assigned as the manager to this user.
 
 
-        ·  Both this user and the manager user should have a valid primary email address assigned to them and you need to have access to the email mailbox inbox for the manager user during the demo.
+        2. 	Both this user and the manager user should have a valid primary email address assigned to them and you need to have access to the email mailbox inbox for the manager user during the demo.
 
 
-        ·  Both the target user and the manager user need to already exist in G Suite as this flow does not provision the G Suite accounts. The target user needs to have a valid G Suite License assigned to them before beginning the demo.
+        3. 	Both the target user and the manager user need to already exist in G Suite as this flow does not provision the G Suite accounts. The target user needs to have a valid G Suite License assigned to them before beginning the demo.
 
 
     3. 	Access to the Google G Suite Admin Portal as an admin user.
 
 
-        ·  [https://admin.google.com/u/1/?hl=en](https://admin.google.com/u/1/?hl=en)
+        1. 	[https://admin.google.com/u/1/?hl=en](https://admin.google.com/u/1/?hl=en)
+
+
+         
+
 
 ## **<span style="text-decoration:underline;">Setup Steps</span>**
 
@@ -82,7 +84,7 @@ Create a new folder in Workflows and label it **_G Suite Flows_**
 
 Click on the gear icon for the new G Suite Flow folder and select import.
 
-Drag and Drop the flow pack that you download[ here](https://okta.box.com/s/iwbxmhdq2yrlhsk9lih1vogrd39o5vvt) into the Choose File section and click OK
+Drag and Drop the flow pack that you download[ here](https://okta.box.com/s/iwbxmhdq2yrlhsk9lih1vogrd39o5vvt) into the Choose File section and click OK 
 
 Navigate to the G Suite Flows folder.
 
@@ -90,15 +92,15 @@ Turn on the following flows:
 
 
 
-    ·  GSute Store License flow
-    ·  [Child] Delete Row from Table
-    ·  [Child] Add License Row to Table
+*   GSute Store License flow
+*   [Child] Delete Row from Table
+*   [Child] Add License Row to Table
 
 Open the GSuite Store License flow
 
-Change the OktaGroupName variable value in the Assign card to the desired Okta group name that will be used to trigger the flow when a user is added or removed from this group.
+Change the OktaGroupName variable value in the Assign card to the desired Okta group name that will be used to trigger the flow when a user is added or removed from this group. 
 
-Change the G Suite License to Assign variable value in the Assign card to the name of the G Suite license you wish to assign a user in the G Suite Activation flow.
+Change the G Suite License to Assign variable value in the Assign card to the name of the G Suite license you wish to assign a user in the G Suite Activation flow. 
 
 Save the GSuite Store License flow.
 
@@ -135,16 +137,17 @@ Save the G Suite Initialization Flow
 
 Run the G Suite Initialization Flow
 
-Open the G Suite Staged Deactivation workflow
+Open the G Suite Staged Deactivation workflow 
 
 Change the setup variables as desired:
 
 
-    Okta Group Name: The name of the existing Okta group that will be used to trigger the G Suite Workflows. If you used the G Suite Initialization flow make sure the group name is the same as the one defined when you ran that flow.
+    **Okta Group Name**: The name of the existing Okta group that will be used to trigger the G Suite Workflows. If you used the G Suite Initialization flow make sure the group name is the same as the one defined when you ran that flow.
 
-    Delay in Minutes: The increment of time as specified by the Delay Interval in minutes that will transpire between the time the users G Suite account is disabled and the users G Suite licenses are removed.
 
-After making changes to the G Suite Staged Deactivation workflow click the save icon to save the changes.
+    **Delay in Minutes**: The increment of time as specified by the Delay Interval in minutes that will transpire between the time the users G Suite account is disabled and the users G Suite licenses are removed.
+
+ After making changes to the G Suite Staged Deactivation workflow click the save icon to save the changes.
 
 Open the G Suite Activation workflow and change the Okta Group Name to match the Okta group that you defined in the G Suite Staged Deactivation workflow.
 
@@ -155,32 +158,35 @@ Click the Save icon to save the changes.
 Turn on both workflows by clicking the On / Off button so that they are green as shown below:
 
 
-    ·  G Suite Activation
+    ∑   	G Suite Activation
 
-    ·  G Suite Staged Deactivation
+
+    ∑   	G Suite Staged Deactivation 
+
+ 
 
 
 ## **<span style="text-decoration:underline;">Demo Flow</span>**
 
 Open and login to the Google G Suite[ Admin Portal](https://admin.google.com/u/1/?hl=en) as your G Suite admin user.
 
-Goto Directory → Users
+Goto Directory ? Users
 
 Click on the username for the test user that is a member of your Okta group.
 
 Point out that the user is allowed to Sign In.
 
-Scroll all the way to the bottom to show what licenses are assigned to the user.
+Scroll all the way to the bottom to show what licenses are assigned to the user. 
 
 Remove the user from the specified Okta group.
 
 Open the email mailbox for the manager user.
 
-You should see an email message that the user removed from the Okta group specified has been disabled in G-Suite.
+You should see an email message that the user removed from the Okta group specified has been disabled in G-Suite. 
 
 If you return to the G Suite Admin Portal and refresh the page, then select that user that the user is not allowed to sign in. The user still has an G Suite License assigned.
 
-Then after the specified delay, in the default configuration that is one minute, the manager gets an email that the G Suite license for the target user has been removed.
+Then after the specified delay, in the default configuration that is one minute, the manager gets an email that the G Suite license for the target user has been removed. 
 
 If you scroll down the page after refreshing the page, sure enough the user targeted is unlicensed.
 
@@ -195,4 +201,4 @@ Sure enough if you return to the G Suite Admin Portal and refresh the page, then
 
 **Additional limitation**: Does not work with cloud identity free licenses, since license list pulls as empty in Okta if that is the only license assigned to a user. Worked with G Suite Business license
 
-
+ 
